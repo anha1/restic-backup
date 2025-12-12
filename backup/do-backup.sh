@@ -55,6 +55,8 @@ mkdir -p "${META_DIR}"
 
 log "Collecting system metadata into ${META_DIR}"
 
+efibootmgr -v > "${META_DIR}/efibootmgr.txt" 2>&1
+
 # ----- GPT / partition table -----
 log "Saving GPT of ${SYSTEM_DISK}"
 sgdisk --backup="${META_DIR}/disk.gpt" "${SYSTEM_DISK}"

@@ -1,0 +1,10 @@
+Init repo (server):
+sudo restic init -r os-ubuntu-box
+
+Drop repo history (server):
+sudo restic  -r os-ubuntu-box  forget --keep-last 1 --prune
+
+uefi replay (target):
+efibootmgr -c -d "/dev/sda" -p "/dev/sda1" -L "Restored Linux" -l "\EFI\systemd\systemd-bootx64.efi"
+
+

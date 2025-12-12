@@ -1,5 +1,0 @@
-Init repo:
-sudo restic init -r os-ubuntu-box
-
-Drop history:
-sudo restic  -r os-ubuntu-box  forget --keep-last 1 --prune
